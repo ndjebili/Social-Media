@@ -30,7 +30,7 @@ public:
     T setHandler(T user);
     void setFollowerCount (T num);
     void setFollowedCount (T num);
-    bool setPrivacy(T prv);
+    bool setPrivacy(bool prv);
 
 
 

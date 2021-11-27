@@ -13,7 +13,7 @@ public:
     Instagram();
     Instagram(T user);
     int getLikeCount();
-    void setLikeCount(T lCount);
+    void setLikeCount(int lCount);
     void Like();
 
 private:

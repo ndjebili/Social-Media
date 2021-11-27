@@ -2,8 +2,6 @@
 // Created by nizam on 11/24/2021.
 //
 #include "iostream"
-#include <d2d1helper.h>
-#include <commctrl.h>
 #include "SocialMediaAccount.h"
 
 using std::cout;
@@ -45,14 +43,15 @@ bool SocialMediaAccount<T>::getPrivacy() {
 
 }
 template<class T>
-bool SocialMediaAccount<T>::setPrivacy(T prv) {
+bool SocialMediaAccount<T>::setPrivacy(bool prv) {
     privacy = prv;
+    return privacy;
 }
 
 template<class T>
 void SocialMediaAccount<T>::addFollower(T user) {
     if (followerCount < maxFollowers) {
-        followed[followedCount] = user;
+        followers[followerCount] = user;
         followerCount++;
     }
 
@@ -83,9 +82,8 @@ template<class T>
 void SocialMediaAccount<T>::displayFollowers(){
     if(privacy == false){
         for(int i=0;i<=followerCount;i++){
-            cout<<followers[i]<<" ";
+            cout<<followers[i]<<endl;
         }
-        cout<<endl;
     }
     else{
         cout<<"Account is private. You can't view this"<<endl;
@@ -97,9 +95,9 @@ template<class T>
 void SocialMediaAccount<T>::displayFollowed(){
     if(privacy == false){
         for(int i=0;i<=followedCount;i++){
-            cout<<followed[i]<<" ";
+            cout<<followed[i]<<endl;
         }
-        cout<<endl;
+
     }
     else{
         cout<<"Account is private. You can't view this"<<endl;
